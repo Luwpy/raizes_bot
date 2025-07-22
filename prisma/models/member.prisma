@@ -1,0 +1,15 @@
+model Member {
+    id String
+    guildId String
+    guild Guild @relation(fields: [guildId], references: [id])
+
+    xp Int
+    money Int
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@id([id, guildId])
+    @@map("members")
+
+}

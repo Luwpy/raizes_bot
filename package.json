@@ -1,0 +1,56 @@
+{
+  "name": "raizes",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "check": "tsc --noEmit && echo ✔ Ok",
+    "build": "tsc",
+    "dev": "bun --env-file .env ./src/index.ts",
+    "dev:dev": "bun --env-file .env.dev ./src/index.ts",
+    "watch": "bun --watch --env-file .env ./src/index.ts",
+    "watch:dev": "bun --watch --env-file .env.dev ./src/index.ts",
+    "start": "bun --env-file .env .",
+    "start:dev": "bun --env-file .env.dev ."
+  },
+  "dependencies": {
+    "@magicyan/discord": "1.4.11",
+    "@prisma/client": "^6.12.0",
+    "@reliverse/reglob": "1.0.0",
+    "chalk": "5.4.1",
+    "discord.js": "14.21.0",
+    "prisma": "^6.12.0",
+    "rou3": "0.5.1",
+    "zod": "4.0.2"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.2.10",
+    "typescript": "5.7.2"
+  },
+  "imports": {
+    "#database": [
+      "./build/database/index.js"
+    ],
+    "#base": [
+      "./build/discord/base/index.js"
+    ],
+    "#functions": [
+      "./build/functions/index.js"
+    ],
+    "#menus": [
+      "./build/menus/index.js"
+    ],
+    "#settings": [
+      "./build/settings/index.js"
+    ],
+    "#tools": [
+      "./build/tools/index.js"
+    ],
+    "#server": [
+      "./build/server/index.js"
+    ],
+    "#lib": [
+      "./build/lib/index.js"
+    ]
+  },
+  "baseVersion": "1.3.7"
+}
